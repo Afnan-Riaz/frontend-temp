@@ -1,0 +1,561 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.patient-profile {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Heading */
+.patient-profile-heading {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 10px;
+  
+  /* Adding box-shadow */
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f0f8ff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add Horizontal Line Below the Heading */
+.patient-profile-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff; /* Blue color, you can change it to any color you like */
+  border-radius: 2px;
+}
+
+/* Hover Effect for Heading */
+.patient-profile-heading:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+
+
+/* Container for Profile Content */
+.profile-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Left side containing Patient Card and Dropdown */
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/* Patient Card */
+.patient-card {
+  max-width: 75%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.patient-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the container */
+  background-color: #f0f8ff; /* Change the background color */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow effect */
+  border-radius: 12px; /* Rounded corners on hover */
+}
+
+/* Patient Card Content */
+.patient-card-content strong {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: black;
+}
+
+
+/* Dropdown Container for Health Data */
+.health-data-dropdown-container {
+  margin-top: 100px;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column; /* Align the dropdown and button vertically */
+  align-items: center; /* Center-align items */
+  gap: 20px;
+  width: 40%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f4faff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add Hover Effect for Health Data Dropdown */
+.health-data-dropdown-container:hover {
+  transform: scale(1.05); /* Slightly enlarge the container */
+  background-color: #f0f8ff; /* Change the background color */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow effect */
+  border-radius: 12px; /* Rounded corners on hover */
+}
+
+/* Dropdown and Add Visit Button */
+.dropdown-container {
+  margin-top: 7px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column; /* Align the dropdown and button vertically */
+  align-items: center; /* Center-align items */
+  gap: 20px;
+  width: 75%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f4faff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add Hover Effect for Dropdown Container */
+.dropdown-container:hover {
+  transform: scale(1.05); /* Slightly enlarge the container */
+  background-color: #f0f8ff; /* Change the background color */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow effect */
+  border-radius: 12px; /* Rounded corners on hover */
+}
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+.health-dropdown-label{
+
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: -7px;
+  margin-right: 10px;
+}
+
+.health-dropdown{
+  width: 281px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.health-dropdown:focus {
+  border-color: #007bff;
+}
+
+.dropdown-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+  margin-left: 6px;
+}
+
+.dropdown {
+  width: 190px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.dropdown:focus {
+  border-color: #007bff;
+}
+
+/* Add Visit Button */
+.add-visit-button {
+  width: 90%;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-visit-button:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Slightly enlarge the container */
+}
+
+/* Patient Summary */
+.right-container {
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #f4faff;
+  padding: 55px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.right-container:hover{
+  transform: scale(1.05); /* Slightly enlarge the container */
+  background-color: #f0f8ff; /* Change the background color */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow effect */
+  border-radius: 12px; /* Rounded corners on hover */
+}
+
+.patient-summary-label {
+  position: absolute; /* Position the label at the top */
+  top: 10px; /* Adjust vertical distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center correction for text width */
+  font-size: 18px; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  color: black;
+
+  padding: 5px 10px; /* Optional: Add padding around text */
+  border-radius: 4px; /* Optional: Add rounded corners */
+
+}
+
+/* Overlay for Add Visit Form */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the button stays outside the dropdown container but with proper spacing */
+.left-container .add-visit-button {
+  margin-top: 20px; /* Add margin to separate from the dropdown container */
+}
+
+
+/* Health Data Section */
+.health-data-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #f4faff;
+  padding: 55px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.health-data-container:hover{
+  transform: scale(1.05); /* Slightly enlarge the container */
+  background-color: #f0f8ff; /* Change the background color */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow effect */
+  border-radius: 12px; /* Rounded corners on hover */
+}
+
+.health-data-content {
+  position: absolute; /* Position the label at the top */
+  top: 10px; /* Adjust vertical distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center correction for text width */
+  font-size: 18px; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  color: black;
+
+  padding: 5px 10px; /* Optional: Add padding around text */
+  border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+
+/* General Popup Styling */
+.popup-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.close-popup-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-popup-button:hover {
+  background-color: #0056b3;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+  background-color: transparent;
+  border: none;
+}
+
+
+
+
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+  }
+
+  .profile-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    width: 100%; /* Make sure the wrapper takes full width */
+    padding: 0 15px; /* Add some horizontal padding */
+  }
+
+  .left-container,
+  .right-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto; /* Center the containers */
+    padding: 50px; /* Add padding to avoid overflow */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+
+  .right-container {
+    order: 2; /* Ensure it comes below the left container */
+  }
+
+  .patient-card {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    padding: 15px; /* Ensure padding is within bounds */
+    box-sizing: border-box;
+  }
+
+  .dropdown-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Space between elements */
+    padding: 12px; /* Avoid overflow */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  /* Health Data Dropdown */
+  .health-data-dropdown {
+    width: 100%; /* Ensure it takes full width of its container */
+    margin-top: 10px; /* Add space above dropdown */
+    padding: 10px; /* Add some padding for easier interaction */
+    font-size: 1rem; /* Make text size more appropriate for smaller screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  .dropdown,
+  .add-visit-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  .add-visit-button {
+    font-size: 14px;
+  }
+
+  .patient-profile-heading {
+    font-size: 1.5rem;
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below heading */
+    padding: 0 15px; /* Ensure heading doesn't overflow */
+  }
+
+  .patient-summary-label {
+    width: 100%; /* Ensure the label takes full width of the container */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Ensure long words are wrapped correctly */
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Add padding for some space around the text */
+    margin: 0 auto; /* Center the label within the container */
+    box-sizing: border-box; /* Include padding in width */
+    overflow-wrap: break-word; /* Ensure long text doesn't overflow */
+    word-break: break-word; /* Ensure text breaks correctly to avoid overflow */
+  }
+
+  /* Health Data Container */
+  .health-data-container {
+    width: 100%; /* Ensure it takes full width of its parent */
+    margin-bottom: 15px; /* Add space between containers */
+    margin-left: 1px;
+    padding: 15px; /* Reduce padding */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+  }
+
+  /* Overlay Form Container */
+  .form-container {
+    width: 90%; /* Make form container take full width */
+    max-width: 400px; /* Limit the width */
+    padding: 20px;
+    margin: 0 auto; /* Center the form */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  /* Adjust the padding and margin for the health data section */
+  .health-data-dropdown-container {
+    width: 100%;
+    padding: 20px;
+    margin: 10px auto; /* Center the section */
+  }
+
+  .patient-profile-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-profile-heading {
+    font-size: 1.25rem;
+    margin-bottom: 15px; /* Space below heading */
+    padding: 0 10px; /* Ensure heading doesn't overflow */
+  }
+
+
+
+  .patient-card,
+  .add-visit-button,
+  .dropdown-container,
+  .health-data-dropdown-container {
+    width: 100%;
+    padding: 12px;
+    margin: 0 auto; /* Center the elements */
+    margin-bottom: 20px; /* Add space between these elements */
+  }
+
+  .add-visit-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .right-container {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto; /* Center the container */
+    margin-bottom: 20px; /* Space below right container */
+    box-sizing: border-box; /* Make sure padding is included in total width */
+  }
+
+  .patient-summary-label {
+    font-size: 1.125rem; /* Further adjust the font size for very small screens */
+    padding: 8px; /* Slightly reduce padding for smaller screens */
+    text-align: center; /* Ensure the label stays centered */
+    word-break: break-word; /* Ensure long words are broken correctly */
+  }
+
+  /* Right Container */
+  .right-container {
+    padding: 150px; /* Reduce padding for smaller screens */
+  }
+
+  /* Health Data Container */
+  .health-data-container {
+
+    padding: 12px; /* Reduce padding on smaller screens */
+    margin-top: 40px;
+    margin-left: 8px;
+  }
+
+  /* Health Data Dropdown */
+  .health-data-dropdown {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 0.9rem; /* Adjust font size to fit on smaller devices */
+  }
+}
+
+
+
+
+
+

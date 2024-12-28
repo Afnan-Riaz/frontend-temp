@@ -1,0 +1,178 @@
+/* Add styles for the overlay and modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.overlay.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+/* Apply a fade effect when the form is closed */
+.overlay.hidden .form-container {
+  opacity: 0;
+}
+
+.add-visit-form {
+  position: fixed; /* Fix the form on the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; 
+}
+
+/* Form container */
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px; /* Set a smaller width */
+  max-height: 80vh; /* Limit the height of the form */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1010; 
+}
+
+/* Add a close button to the modal */
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Sticky Header for the form */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0; /* Position it at the top when scrolling */
+  background-color: white; /* Ensure background color is solid to avoid transparency */
+  padding: 10px 0;
+  z-index: 1011; /* Ensure it stays above the form content */
+
+}
+
+
+.form-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Form labels and inputs */
+label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Apply styles for the DatePicker input */
+.datepicker-input {
+  width: 225%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-button,
+.save-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #e53935;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
